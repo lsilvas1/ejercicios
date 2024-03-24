@@ -1,0 +1,42 @@
+ //Escribir un programa que sume todos los valores de una lista de números ingresados por el usuario. 
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese una cadena de texto:");
+        String texto = scanner.nextLine().toLowerCase(); // Convertimos el texto a minúsculas para simplificar
+
+        Set<Character> vocales = new HashSet<>();
+        Set<Character> consonantes = new HashSet<>();
+
+        for (int i = 0; i < texto.length(); i++) {
+            char c = texto.charAt(i);
+            if (Character.isLetter(c)) { // Verificamos si el carácter es una letra
+                if (esVocal(c)) {
+                    vocales.add(c);
+                } else {
+                    consonantes.add(c);
+                }
+            }
+        }
+
+        System.out.println("Vocales presentes en el texto:");
+        for (char vocal : vocales) {
+            System.out.print(vocal + " ");
+        }
+
+        System.out.println("\nConsonantes presentes en el texto:");
+        for (char consonante : consonantes) {
+            System.out.print(consonante + " ");
+        }
+    }
+
+    public static boolean esVocal(char c) {
+        return "aeiou".indexOf(c) != -1; // Verifica si el carácter está en la cadena de vocales
+    }
+}
+
