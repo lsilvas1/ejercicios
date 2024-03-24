@@ -1,5 +1,4 @@
- //Escribir un programa que sume todos los valores de una lista de números ingresados por el usuario. 
-
+ //Utilice como base el ejercicio resuelto en clase y escriba un programa que sea capaz de obtener la lista de vocales y consonantes existentes dentro de una cadena de texto.
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
