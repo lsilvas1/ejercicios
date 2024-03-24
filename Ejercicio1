@@ -1,0 +1,33 @@
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Integer> numeros = new ArrayList<>();
+
+        System.out.println("Ingrese los números (ingrese '0' para finalizar la entrada):");
+
+        // Solicitar al usuario que ingrese números hasta que ingrese 0
+        int numero;
+        while (true) {
+            System.out.print("Ingrese un número: ");
+            numero = scanner.nextInt();
+            if (numero == 0) {
+                break;
+            }
+            numeros.add(numero);
+        }
+
+        // Sumar los números en la lista
+        int suma = 0;
+        for (int num : numeros) {
+            suma += num;
+        }
+
+        System.out.println("La suma de los números ingresados es: " + suma);
+    }
+}
