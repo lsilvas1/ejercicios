@@ -1,0 +1,35 @@
+ //Escribir un programa que sume todos los valores de una lista de números ingresados por el usuario. 
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListaVocalesConsonantes {
+    public static void main(String[] args) {
+        String texto = "Ejemplo de cadena de texto";
+        List<Character> vocales = new ArrayList<>();
+        List<Character> consonantes = new ArrayList<>();
+
+        // Convertimos el texto a minúsculas para simplificar las comparaciones
+        texto = texto.toLowerCase();
+
+        for (int i = 0; i < texto.length(); i++) {
+            char letra = texto.charAt(i);
+            if (esVocal(letra)) {
+                vocales.add(letra);
+            } else if (esConsonante(letra)) {
+                consonantes.add(letra);
+            }
+        }
+
+        System.out.println("Vocales: " + vocales);
+        System.out.println("Consonantes: " + consonantes);
+    }
+
+    public static boolean esVocal(char letra) {
+        return "aeiou".indexOf(letra) != -1;
+    }
+
+    public static boolean esConsonante(char letra) {
+        return "bcdfghjklmnpqrstvwxyz".indexOf(letra) != -1;
+    }
+}
